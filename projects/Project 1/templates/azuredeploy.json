@@ -25,7 +25,7 @@
           "type": "Microsoft.Network/networkSecurityGroups",
           "apiVersion": "2020-11-01",
           "name": "SQL-NSG",
-          "location": "westus2",
+          "location": "JapanEast",
           "properties": {
               "securityRules": [
                   {
@@ -52,7 +52,7 @@
           "type": "Microsoft.Network/networkSecurityGroups",
           "apiVersion": "2020-11-01",
           "name": "WEB-NSG",
-          "location": "westus2",
+          "location": "JapanEast",
           "properties": {
               "securityRules": [
                   {
@@ -79,7 +79,7 @@
           "type": "Microsoft.Network/publicIPAddresses",
           "apiVersion": "2020-11-01",
           "name": "SQL-IP",
-          "location": "westus2",
+          "location": "JapanEast",
           "sku": {
               "name": "Basic",
               "tier": "Regional"
@@ -95,7 +95,7 @@
           "type": "Microsoft.Network/publicIPAddresses",
           "apiVersion": "2020-11-01",
           "name": "WEB-IP",
-          "location": "westus2",
+          "location": "JapanEast",
           "sku": {
               "name": "Basic",
               "tier": "Regional"
@@ -111,7 +111,7 @@
           "type": "Microsoft.Network/virtualNetworks",
           "apiVersion": "2020-11-01",
           "name": "wp-vnet",
-          "location": "westus2",
+          "location": "JapanEast",
           "properties": {
               "addressSpace": {
                   "addressPrefixes": [
@@ -146,7 +146,7 @@
           "type": "Microsoft.Compute/virtualMachines",
           "apiVersion": "2021-11-01",
           "name": "[parameters('sql_server_name')]",
-          "location": "westus2",
+          "location": "JapanEast",
           "dependsOn": [
               "[resourceId('Microsoft.Network/networkInterfaces', 'SQL-NIC')]"
           ],
@@ -203,7 +203,7 @@
           "type": "Microsoft.Compute/virtualMachines",
           "apiVersion": "2021-11-01",
           "name": "[parameters('web_server_name')]",
-          "location": "westus2",
+          "location": "JapanEast",
           "dependsOn": [
               "[resourceId('Microsoft.Network/networkInterfaces', 'WEB-NIC')]"
           ],
@@ -332,7 +332,7 @@
           "type": "Microsoft.Network/networkInterfaces",
           "apiVersion": "2020-11-01",
           "name": "SQL-NIC",
-          "location": "westus2",
+          "location": "JapanEast",
           "dependsOn": [
               "[resourceId('Microsoft.Network/publicIPAddresses', 'SQL-IP')]",
               "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'wp-vnet', 'SQL')]",
@@ -370,7 +370,7 @@
           "type": "Microsoft.Network/networkInterfaces",
           "apiVersion": "2020-11-01",
           "name": "WEB-NIC",
-          "location": "westus2",
+          "location": "JapanEast",
           "dependsOn": [
               "[resourceId('Microsoft.Network/publicIPAddresses', 'WEB-IP')]",
               "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'wp-vnet', 'WEB')]",
